@@ -1,0 +1,16 @@
+# Config file for Air
+
+# General settings
+root = "."              # Root directory of the project
+tmp_dir = "tmp"         # Temporary directory for Air to store files
+
+[build]
+bin = "main"            # Compiled binary output path
+cmd = "go build -o {{.Output}} {{.Input}}"  # Corrected build command
+exclude = ["tmp/*", "client/*"]  # Directories to exclude from build/watch
+include = ["**/*"]      # Files to include for watching
+ignore = ["tmp/*"]      # Files or directories to ignore (redundant with `exclude`)
+
+[log]
+level = "info"          # Log level (debug, info, warn, error)
+output = "stdout"       # Log output (stdout or file path)
